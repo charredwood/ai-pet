@@ -1,8 +1,8 @@
 <template>
-<div class="flex flex-col items-center justify-center w-full h-96 bg-white overflow-y-auto shadow-lg border-1 border-white">
+<div class="flex flex-col items-center justify-center w-full h-96 bg-white overflow-y-auto border-t-1 border-neutral-300">
        
     <!-- Chat Messages -->
-    <div class="flex flex-col w-full h-5/6 space-y-2 overflow-y-auto p-4">
+    <div class="flex flex-col w-full h-4/6 space-y-4 overflow-y-auto p-4">
       <!-- Loop through messages -->
       <div v-for="(message, index) in messages" :key="index" class="w-full">
         <div :class="message.sender === 'You' ? 'text-right' : 'text-left'">
@@ -26,7 +26,7 @@
       </div>
     </div>
   
-    <div class="flex justify-center w-5/6 space-x-3">
+    <div class="flex justify-center w-5/6 space-x-3 pt-4">
     <el-input
     v-model="userInput" 
     style="width: 100%" 
@@ -53,7 +53,6 @@ import { ElButton } from 'element-plus'
     },
     methods: {
 
-// Vue component (frontend)
 async sendMessage() {
   if (!this.userInput.trim()) return; // Don't send empty input
 
@@ -75,7 +74,7 @@ async sendMessage() {
 
   } catch (error) {
     console.error("Error:", error);
-    this.messages.push({ sender: "Pet", text: "Oh, no! Sorry, I don't understand." });
+    this.messages.push({ sender: "Pet", text: "Oh, no! Sorry, I couldn't understand." });
   }
 
   this.userInput = "";
