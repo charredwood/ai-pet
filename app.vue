@@ -1,6 +1,6 @@
 <script lang="ts" setup>
   "use client";
-  import Header from "./components/Header.vue";
+  import Header from "./components/header.vue";
   import Character from "./components/character.vue";
   import Chatbot from "./components/Chatbot.vue";
 </script>
