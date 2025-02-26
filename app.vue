@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+
   "use client";
   import Header from "./components/header.vue";
   import Character from "./components/character.vue";
@@ -7,7 +8,8 @@
 
 <template>
     <main>
-    <div class="h-screen" style="background: rgb(251,231,255) radial-gradient(circle, rgba(251,231,255,1) 0%, rgba(255,255,255,1) 64%)">
+    <div
+    class="h-screen" style="background: radial-gradient(circle, rgba(251,231,255, 1) 0%, rgba(255,255,255,1) 64%);">
       <Header />
       <Character />
       <Chatbot />

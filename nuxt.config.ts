@@ -10,5 +10,11 @@ export default defineNuxtConfig({
     plugins: [tailwindcss(),],
   },
   css: ['~/styles.css'],
-  modules: ['@element-plus/nuxt'],
+  modules: [
+    '@element-plus/nuxt',
+    '@pinia/nuxt',
+  ],
+  serverMiddleware: [
+    { path: "/api/chat", handler: "~/server/api/chat.js" },
+  ],
 })
